@@ -1,0 +1,189 @@
+body {
+  overflow: hidden;
+  background-color: #f5f7fa;
+  margin: 0;
+  padding: 0;
+}
+.heading {
+  background-color: white;
+  color: #1f4788;
+  display: flex;
+  justify-content: center;
+  height: 60px;
+  align-items: center;
+  font-size: 1.8em;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.all-messages-container {
+  padding-bottom: 50px; /* Must be equal to or slightly greater than the fixed bar height */
+}
+#messages {
+  /* Define a fixed height for the message area */
+  height: 80vh; /* Example: 80% of the viewport height */
+
+  /* Crucial: Enable scrolling when content exceeds the height */
+  overflow-y: scroll;
+
+  /* Optional: Padding to lift content above the fixed input bar */
+  padding-bottom: 70px;
+}
+/*.response-text{
+    color: black;
+    display: inline-block;
+    background-color: maroon;
+    margin: 3px auto;
+    border-radius: 3px;
+    padding: 3px;
+    text-align: center;
+
+}*/
+.response-text p {
+  display: block;
+  max-width: fit-content;
+  padding: 10px 15px;
+  margin-bottom: 12px;
+  border-radius: 20px; /* Highly rounded corners for a soft look */
+  line-height: 1.4;
+  font-size: 1em;
+  background-color: #ebebeb; /* Lighter dark gray for the received message */
+  color: #333333;
+}
+#fixed-chat-bar {
+  /* 1. Fix the position relative to the browser window */
+
+  width: 100%;
+
+  /* Optional: Use Flexbox to lay out the input and button nicely */
+  display: flex;
+  gap: 10px; /* Space between input and button */
+}
+
+#message-input {
+  /* Make the input field take up most of the space */
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+#send-btn {
+  /* Basic styling for the button */
+
+  padding: 10px 15px;
+  border: none;
+  background-color: #288bea;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* 1. Style for the image inside the chat bubble */
+.chat-image {
+  max-width: 100%; /* Ensures image fits inside the message bubble */
+  max-height: 300px; /* Prevents extremely long images */
+  border-radius: 8px;
+  margin-top: 5px; /* Spacing above the image */
+  margin-bottom: 5px; /* Spacing below the image, if text follows */
+  display: block; /* Ensures it sits on its own line */
+  object-fit: contain; /* Ensures the whole image is visible */
+}
+/* 2. Style for the new upload button in the fixed bar */
+#upload-btn {
+  /* Style to make it look like an icon button */
+  padding: 10px;
+  border: none;
+  background-color: #ebebeb; /* Light gray background */
+  color: #333333;
+  border-radius: 50%; /* Makes it circular */
+  cursor: pointer;
+  font-size: 1.2em;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+#upload-btn:hover {
+  background-color: #dddddd;
+}
+
+/* 3. Adjust the fixed bar to accommodate the new button */
+#fixed-chat-bar {
+  /* Existing styles here... */
+  display: flex;
+  align-items: center; /* Vertically align items */
+  gap: 10px;
+  /* ... */
+}
+#chat-input-area-wrapper {
+  /* Assuming this is fixed to the bottom and full width */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  right: 0;
+  margin-right: 5px;
+  /* Use Flexbox with column direction to stack the preview and form */
+  display: flex;
+  flex-direction: column; /* Stacks children vertically */
+  padding: 10px; /* Add some padding around the whole input area */
+  background-color: white; /* Prevent content scrolling underneath */
+  border-top: 1px solid #ccc;
+  z-index: 100; /* Ensure it's always on top */
+}
+/* Style for the container holding the preview image and filename */
+#preview-container {
+  /* CRITICAL FIXES for Layout */
+  width: 100%;
+  box-sizing: border-box; /* Ensures padding is INSIDE the 100% width */
+  margin-bottom: 10px; /* Provides space above the input bar */
+  padding: 8px; /* Internal padding */
+
+  /* Display properties (ensure these are set): */
+  display: flex; /* Keeps elements (img, text, button) aligned horizontally */
+  align-items: center; /* Vertically centers items */
+  justify-content: space-between; /* OPTIONAL: Pushes filename to the center */
+
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+/* Style for the actual image preview thumbnail */
+#image-preview {
+  max-height: 100px; /* Smaller preview size */
+  max-width: 50px;
+  margin-right: 10px;
+  border-radius: 4px;
+  object-fit: cover; /* Ensures image covers the area without distortion */
+}
+
+/* Style for the button to remove the preview */
+#remove-preview-btn {
+  flex-shrink: 0;
+  background: none;
+  border: 1px solid #aaa;
+  color: #666;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 0.7em;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.2s;
+}
+
+#remove-preview-btn:hover {
+  background-color: #e0e0e0;
+}
+
+/* Style for the filename text */
+#preview-filename {
+  flex-grow: 1; /* Allows filename to take up available space */
+  font-size: 0.85em;
+  color: #555;
+  margin: 0 10px;
+}
+/* The container for each message (replace existing styling on the <p> element) */

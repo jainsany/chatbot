@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>ChatBot</title>
+  </head>
+  <body>
+    <div class="heading">Chat Bot</div>
+   
+    <div class="all-messages-container">
+      <div id="messages" class="response-text"></div>
+    </div>
+    <div id="chat-input-area-wrapper">
+     <div id="preview-container" style="display: none">
+      <img
+        id="image-preview"
+        src="#"
+        alt="Image Preview"
+        style="
+          max-height: 100px;
+          max-width: 100px;
+          margin: 5px;
+          border-radius: 5px;
+        "
+      />
+      <button type="button" id="remove-preview-btn">X</button>
+      <p id="preview-filename"></p>
+    </div>
+    <form id="fixed-chat-bar">
+      <input
+        type="file"
+        id="image-upload"
+        accept="image/*"
+        style="display: none"
+      />
+      <button type="button" id="upload-btn" title="Send Image">🖼️</button>
+      <input type="text" id="message-input" placeholder="Enter your message" />
+      <button type="button" id="send-btn">Send</button>
+    </form>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="socket.js"></script>
+  </body>
+</html>

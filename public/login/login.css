@@ -1,0 +1,89 @@
+/* public/login/login.css */
+
+body {
+    /* Ensures the body takes up the full viewport height */
+    min-height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #F5F7FA; /* Matches your light theme background */
+}
+
+.auth-container {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.auth-switch {
+    display: flex;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.auth-switch button {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    background-color: #EBEBEB; /* Light gray for inactive tab */
+    color: #555555;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s;
+}
+
+.auth-switch button.active {
+    background-color: #288BEA; /* Blue for active tab */
+    color: white;
+}
+
+/* Forms */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.auth-form h2 {
+    margin-top: 0;
+    color: #333333;
+}
+
+.auth-form.hidden {
+    display: none;
+}
+
+.auth-form input {
+    padding: 12px;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.auth-btn {
+    padding: 12px;
+    border: none;
+    background-color: #1F4788; /* Deep blue primary color */
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.2s;
+}
+
+.auth-btn:hover {
+    background-color: #123060;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 10px;
+    visibility: hidden;
+}
