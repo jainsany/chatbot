@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const http = require("http");
 const app = express();
@@ -6,8 +7,8 @@ const path = require("path");
 const { Server } = require("socket.io");
 const io = new Server(server);
 const mongoose = require("mongoose");
-const DB_URI =
-  "mongodb+srv://sanyam_jain:cVLL6hmq1IfHdhjP@cluster0.5ubqyxo.mongodb.net/?appName=Cluster0";
+
+const DB_URI = process.env.MONGO_URL;
 
 mongoose
   .connect(DB_URI)
